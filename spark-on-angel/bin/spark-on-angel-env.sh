@@ -6,10 +6,10 @@
 # 3. upload angel-<version>-bin directory to HDFS
 # 4. set the following variables, SPARK_HOME, ANGEL_HOME, ANGEL_HDFS_HOME, ANGEL_VERSION
 
-export SPARK_HOME=<SPARK_HOME>
-export ANGEL_HOME=<ANGEL_HOME>
-export ANGEL_HDFS_HOME=<ANGEL_HDFS_HOME>
-export ANGEL_VERSION=<ANGEL_VERSION>
+export SPARK_HOME=/usr/hdp/current/spark2-client
+export ANGEL_HOME=/opt/angel/dist/target/angel-1.4.0-bin
+export ANGEL_HDFS_HOME=/apps/angel/angel-1.4.0-bin
+export ANGEL_VERSION=1.4.0
 
 scala_jar=scala-library-2.11.8.jar
 external_jar=fastutil-7.1.0.jar,htrace-core-2.05.jar,sizeof-0.3.0.jar,kryo-shaded-4.0.0.jar,minlog-1.3.0.jar,sketches-core-0.8.1.jar,memory-0.8.1.jar,commons-pool-1.6.jar

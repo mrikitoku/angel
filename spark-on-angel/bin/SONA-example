@@ -2,16 +2,20 @@
 
 source ./spark-on-angel-env.sh
 
+export SPARK_VERSION_NUMBER=2
+
 $SPARK_HOME/bin/spark-submit \
     --master yarn-cluster \
+    --queue default \
     --conf spark.ps.jars=$SONA_ANGEL_JARS \
-    --conf spark.ps.instances=10 \
+    --conf spark.ps.instances=2 \
     --conf spark.ps.cores=2 \
     --conf spark.ps.memory=6g \
-    --jars $SONA_SPARK_JARS\
+    --conf angel.log.path=/tmp \
+    --jars $SONA_SPARK_JARS \
     --name "BreezeSGD-spark-on-angel" \
-    --driver-memory 10g \
-    --num-executors 10 \
+    --driver-memory 5g \
+    --num-executors 2 \
     --executor-cores 2 \
     --executor-memory 4g \
     --class com.tencent.angel.spark.examples.ml.BreezeSGD \
